@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>GPTutu-Demo</title>
+    <style>
+        body {
+            width: 300px;
+            height: 300px;
+            background-color: black;
+        }
+
+        input[type="text"] {
+            width: 300px;
+            height: 100px;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+
+        label {
+            color: white;
+            font-weight: bold;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            background-color: white;
+            color: black;
+        }
+        .loading-gif {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 6;
+            width: 32px;
+            height: 32px;
+            margin-right: 10px;
+            margin-top: 6px;
+        }
+        .header {
+            background-color: #000000;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60px;
+        }
+        .header-title {
+            font-size: 24px;
+            margin: 0;
+        }
+        .copiar-button {
+            display: none;
+            font-size: 15px;
+            margin-bottom: 10px;
+            background-color: #0020af;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+    <header class="header">
+        <h1 class="header-title">GPTutu - Version 1.0</h1>
+    </header>
+</head>
+
+<body style="position: relative; min-height: 0vh;">
+
+    <label for="input-type">Select the input type:</label>
+    <select id="input-type">
+        <option value="template-email">Email Template</option>
+        <option value="free-prompt">Free Prompt</option>
+    </select>
+    <textarea id="input" rows="10" cols="38" placeholder="For general prompts, type what you need, and for Emails type the text in the following format: &#13;&#10; -[Recipient's Name] &#13;&#10; -[Subject 1] &#13;&#10; -[Subject 2] &#13;&#10; -[...]..."></textarea>
+    
+    <div class="button-container">
+        <button style="margin-bottom: 10px;" id="generate">Consult GPT-4</button>
+    </div>
+
+    <img id="loading-gif" class="loading-gif" src="loading.gif" alt="Loading..." style="display: none;">
+
+    <script src="popup.js"></script>
+    <script src="apiGPT.js"></script>
+    <textarea id="result" rows="16" cols="38" placeholder="[GPT-4 Output]"></textarea>
+</body>
+
+
+
+</html>
